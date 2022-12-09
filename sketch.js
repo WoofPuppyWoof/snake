@@ -25,7 +25,7 @@ function pickLocation() {
 }
 
 function draw() {
-  background(0);
+  background(0); // originally 51
 
   if (s.eat(food)) {
     pickLocation();
@@ -35,7 +35,7 @@ function draw() {
   s.update();
   s.show();
 
-  fill(255, 0, 0);
+  fill(255, 0, 0); // originally (255, 0, 100)
   rect(food.x, food.y, scl, scl);
 }
 
