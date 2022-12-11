@@ -10,6 +10,7 @@ function setup() {
   s = new Snake();
   frameRate(10);
   pickLocation();
+  score = 0;
 }
 
 function logScore() {
