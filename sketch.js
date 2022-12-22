@@ -2,6 +2,9 @@ var s;
 var scl = 20;
 var pressedKey = "RIGHT_ARROW";
 var score = 0;
+var canShowScore = 0;
+
+var sc;
 
 var food;
 
@@ -11,11 +14,16 @@ function setup() {
   frameRate(10);
   pickLocation();
   score = 0;
+  if (canShowScore === 0) {
+    sc = createP('');
+    canShowScore = 1;
+  }
+  logScore();
 }
 
 function logScore() {
-  score++;
   console.log('Score: '+score);
+  sc.html('Score: '+score);
 }
 
 function pickLocation() {
@@ -30,6 +38,7 @@ function draw() {
 
   if (s.eat(food)) {
     pickLocation();
+    score++;
     logScore();
   }
   s.death();
